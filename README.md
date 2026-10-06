@@ -91,21 +91,3 @@ Content-Type: application/json
 ```
 
 The update endpoint requires a non-empty `title`. It updates `title` and `description`.
-
-## Add the project to GitHub
-
-If this directory is not already a Git repository, initialize it and commit the project:
-
-```bash
-git init
-git add .
-git commit -m "Add todo backend"
-```
-
-Create an empty repository on GitHub, then connect and push it (replace the URL with your repository URL):
-
-```bash
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repository>.git
-git push -u origin main
-```
