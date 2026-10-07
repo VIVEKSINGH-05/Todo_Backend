@@ -4,6 +4,7 @@ import cors from "cors";
 import todoRoutes from "./routes/todo.routes.js";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import { errorHandler } from "./middleware/error.middleware.js";
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,8 @@ app.use("/api", todoRoutes);
 // Connect to MongoDB
 connectDB();
 
+// Error Handling Middleware
+app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
